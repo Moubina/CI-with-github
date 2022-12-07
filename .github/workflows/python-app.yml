@@ -37,3 +37,22 @@ jobs:
     - name: Test with pytest
       run: |
         python -m unittest
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      env: 
+        DOCKER_USER: ${{secrets.USERNAME_DOCKER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_TOKEN}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Build the Docker image
+      run: |
+        run: docker build . --file Dockerfile --tag ${{secrets.USERNAME_DOCKER}}/tp2_python-image
+    - name: Docker Push
+      run: docker push ${{secrets.USERNAME_DOCKER}}/tp2_python-image
+        
+  
