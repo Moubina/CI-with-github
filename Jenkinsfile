@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                git branch: 'master', url: 'https://github.com/Moubina/CI-with-github'
                 bat 'docker build -t my_app -f Dockerfile .'
             }
         }
