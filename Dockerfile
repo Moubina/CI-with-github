@@ -12,4 +12,4 @@ COPY . .
 
 COPY app.py .
 
-CMD flask run -h 0.0.0.0 -p 5000
+CMD ["flask", "run", "-m", "--host=0.0.0.0"]
