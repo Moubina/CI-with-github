@@ -1,15 +1,15 @@
-#FROM python:3.9
+FROM python:3.9
 
-#WORKDIR C:\Users\pharv\Documents\GitHub\CI-with-github
+WORKDIR /app
 
-#COPY requirements.txt .
+COPY requirements.txt .
 
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
-#COPY . .
+COPY . .
 
-#EXPOSE 5000
+EXPOSE 5000
 
-#COPY app.py .
+COPY app.py .
 
-#CMD ["python", "app.py",]
+CMD ["python", "app.py",]
