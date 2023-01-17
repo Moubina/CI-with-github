@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Testing') {
             steps {
-                bat 'echo ooo'
+                bat 'python -m unittest'
             }
         }
         stage('Deploying') {
