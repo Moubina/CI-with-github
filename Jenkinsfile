@@ -10,6 +10,7 @@ pipeline {
         }
         stage('Testing') {
             steps {
+                bat 'echo $PATH'
                 bat 'python -m unittest'
             }
         }
