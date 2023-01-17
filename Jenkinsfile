@@ -16,7 +16,7 @@ pipeline {
         stage('Deploying') {
             steps {
                 
-                bat 'docker run -d 5000:5000 image1'
+                bat 'docker run -d image1'
             }
         }
     }
