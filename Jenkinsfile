@@ -10,7 +10,7 @@ pipeline {
         stage('Testing') {
             steps {
                 bat 'pip install -r requirements.txt'
-                bat 'python -m unittest test_main.py'
+                bat 'python -m unittest'
             }
         }
         stage('Deploying') {
