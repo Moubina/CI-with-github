@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                bat 'docker build -t my_app -f Dockerfile .'
+                bat 'pip install -r requirements.txt'
             }
         }
         stage('Testing') {
             steps {
-                bat 'pip install -r requirements.txt'
+                
                 bat 'python -m unittest test_main.py'
             }
         }
