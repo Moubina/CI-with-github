@@ -5,7 +5,7 @@ pipeline {
         stage('Building') {
             steps {
                 bat 'pip install -r requirements.txt'
-                bat 'docker build -t image1:latest .'
+                bat 'docker build -t image1 .'
             }
         }
         stage('Testing') {
@@ -16,7 +16,7 @@ pipeline {
         stage('Deploying') {
             steps {
                 
-                bat 'docker run -p 5000:5000 image1'
+                bat 'docker run -d 5000:5000 image1'
             }
         }
     }
