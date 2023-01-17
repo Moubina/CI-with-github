@@ -14,8 +14,8 @@ pipeline {
         }
         stage('Deploying') {
             steps {
-                bat 'docker build -t my_app .'
-                bat 'docker run -p 5000:5000 my_app'
+                bat 'docker build -t image1 .'
+                bat 'docker run -p 5000:5000 image1'
             }
         }
     }
